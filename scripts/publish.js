@@ -5,9 +5,14 @@ const token = process.argv[2];
 const manifestPath = "package.json";
 const preId = "canary";
 
-npmPublish({ token })
-  .then((type) => {
-    if (type === "none") {
+publishToNpm().then(console.log);
+
+async function publishToNpm() {
+  try {
+    const result = await npmPublish({ token });
+
+    // If did not publish -> publish canary
+    if (result.type === "none") {
       const manifestFile = readFileSync(manifestPath, "utf8");
       const manifest = JSON.parse(manifestFile);
       const canaryManifest = {
@@ -16,10 +21,12 @@ npmPublish({ token })
       };
       writeFileSync(manifestPath, JSON.stringify(canaryManifest, null, 2));
 
-      return npmPublish({ token, tag: preId });
+      return await npmPublish({ token, tag: preId });
     }
-  })
-  .catch((error) => {
+
+    return result;
+  } catch (error) {
     console.error(error);
     process.exit(1);
-  });
+  }
+}
