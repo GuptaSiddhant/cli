@@ -5,8 +5,7 @@ const token = process.argv[2];
 const manifestPath = "package.json";
 
 (async () => {
-  // const result = await npmPublish({ token });
-  const result = { type: "none" };
+  const result = await npmPublish({ token });
 
   // If did not publish -> publish canary
   if (result.type === "none") {
