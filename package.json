@@ -1,6 +1,6 @@
 {
   "name": "guptasiddhant",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Siddhant Gupta's CLI.",
   "main": "bin/index.js",
   "repository": "https://github.com/GuptaSiddhant/cli.git",
