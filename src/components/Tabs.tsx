@@ -1,7 +1,13 @@
 // https://github.com/jdeniau/ink-tab
 import readline from "readline";
-import { Box, BoxProps, Text, useStdin, TextProps } from "ink";
-import { ReactElement, useCallback, useEffect, useRef, useState } from "react";
+import { Box, Text, useStdin, type BoxProps, type TextProps } from "ink";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactElement,
+} from "react";
 
 /**
  * Represent props of a <Tab>

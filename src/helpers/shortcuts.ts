@@ -1,5 +1,6 @@
 import open from "open";
 import { useInput, useApp } from "ink";
+
 import { contacts } from "./about";
 
 export const shortcuts: Array<{ key: string; label: string; url?: string }> = [

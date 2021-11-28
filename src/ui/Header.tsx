@@ -1,4 +1,5 @@
 import { Box, Text, Newline } from "ink";
+
 import { PADDING_X } from "../helpers/constants";
 
 const name = "Siddhant Gupta";

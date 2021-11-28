@@ -1,4 +1,4 @@
-import axios, { CancelTokenSource } from "axios";
+import axios, { type CancelTokenSource } from "axios";
 import { useState, useEffect } from "react";
 
 export default function useQuery<T>(query: string) {

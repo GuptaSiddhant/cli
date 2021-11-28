@@ -1,4 +1,5 @@
 import { Box, Text } from "ink";
+
 import { shortcuts } from "../helpers/shortcuts";
 import { PADDING_X } from "../helpers/constants";
 import HelpBox from "../components/HelpBox";

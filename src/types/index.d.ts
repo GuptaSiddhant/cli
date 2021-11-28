@@ -1,4 +1,4 @@
-import { ItemProps } from "../components/Select";
+import { type ItemProps } from "../components/Select";
 
 export interface PageProps<T> {
   query: string;

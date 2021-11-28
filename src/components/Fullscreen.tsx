@@ -1,8 +1,7 @@
-import { Box } from "ink";
-import { useEffect, useState } from "react";
+import { Box, type BoxProps } from "ink";
+import { useEffect, useState, type PropsWithChildren } from "react";
+
 import { WindowSizeContext } from "../helpers/useWindowSize";
-import type { BoxProps } from "ink";
-import type { PropsWithChildren } from "react";
 
 export default function Fullscreen({
   children,

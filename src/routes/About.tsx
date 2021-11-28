@@ -1,4 +1,5 @@
 import { Newline, Text } from "ink";
+
 import { contacts, about, skills } from "../helpers/about";
 import TextTable from "../components/TextTable";
 

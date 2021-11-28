@@ -1,19 +1,14 @@
-import { Box } from "ink";
-import { RouterContext, useRouterState } from "./routes";
+import { Box, type BoxProps } from "ink";
 
+import { RouterContext, useRouterState, type RoutePath } from "./routes";
 import Header from "./ui/Header";
 import Navigation from "./ui/Navigation";
 import Footer from "./ui/Footer";
-
 import Title from "./components/Title";
 import Fullscreen from "./components/Fullscreen";
 import Divider from "./components/Divider";
-
 import { PADDING_X } from "./helpers/constants";
 import { useShortcuts } from "./helpers/shortcuts";
-
-import type { BoxProps } from "ink";
-import type { RoutePath } from "./routes";
 
 const boxProps: BoxProps = {
   paddingX: PADDING_X,

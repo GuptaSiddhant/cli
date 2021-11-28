@@ -1,5 +1,4 @@
 import { blogQuery } from "../helpers/queries";
-import DateLine from "../components/DateLine";
 import Page from "../components/Page";
 import {
   ItemBox,

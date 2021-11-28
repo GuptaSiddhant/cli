@@ -1,9 +1,14 @@
 // https://github.com/vadimdemedes/ink-select-input
 
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { Box, useInput, Text } from "ink";
-import type { Key } from "ink";
-import type { FC } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+  type FC,
+} from "react";
+import { Box, useInput, Text, type Key } from "ink";
 
 export default function SelectInput<T>(props: SelectProps<T>): JSX.Element {
   const {

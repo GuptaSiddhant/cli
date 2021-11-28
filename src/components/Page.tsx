@@ -1,12 +1,12 @@
 import open from "open";
-import Select, { Item } from "./Select";
 
-import useQuery from "../helpers/useQuery";
-import Loading from "./Loading";
-import ErrorText from "./Error";
-import useWindowSize from "../helpers/useWindowSize";
 import { useCurrentRoute } from "../routes";
+import useQuery from "../helpers/useQuery";
+import useWindowSize from "../helpers/useWindowSize";
+import ErrorText from "./Error";
+import Loading from "./Loading";
 import HelpBox from "./HelpBox";
+import Select, { Item } from "./Select";
 import type { Common, PageProps } from "../types";
 
 export default function Page<T extends Common>({

@@ -2,8 +2,9 @@
 
 import { StrictMode } from "react";
 import { render } from "ink";
+
 import App from "./App";
-import type { RoutePath } from "./routes";
+import { type RoutePath } from "./routes";
 
 const path = process.argv[2] as RoutePath | undefined;
 

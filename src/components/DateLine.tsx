@@ -1,4 +1,5 @@
 import { Text } from "ink";
+
 import type { DateTime } from "../types";
 
 export default function DateLine({

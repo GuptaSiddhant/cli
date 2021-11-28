@@ -1,4 +1,5 @@
 import { Box } from "ink";
+
 import { Tab, Tabs } from "../components/Tabs";
 import routes, { useRouter } from "../routes";
 import { PADDING_X } from "../helpers/constants";
