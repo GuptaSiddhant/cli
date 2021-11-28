@@ -1,8 +1,8 @@
 {
   "name": "guptasiddhant",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Siddhant Gupta's CLI.",
-  "main": "bin/index.js",
+  "bin": "bin/index.js",
   "repository": "https://github.com/GuptaSiddhant/cli.git",
   "author": "Siddhant Gupta <me@guptasiddhant.com>",
   "license": "MIT",

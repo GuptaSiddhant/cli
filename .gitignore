@@ -15,15 +15,3 @@ build
 **/*/build
 
 **/*/package-lock.json
-
-# Local Netlify folder
-.netlify
-
-node_modules
-
-.cache
-.vercel
-.output
-
-public/build
-api/build
