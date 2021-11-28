@@ -31,9 +31,11 @@ async function publishCanaryToNpm() {
 }
 
 /** @param {import("@jsdevtools/npm-publish").Results} results */
-function handleSuccess({ tag }) {
-  console.log("Link : https://www.npmjs.com/package/guptasiddhant");
+function handleSuccess({ tag, version }) {
   console.log(`Usage: npx guptasiddhant@${tag}`);
+  console.log(
+    `Link : https://www.npmjs.com/package/guptasiddhant/v/${version}`
+  );
 }
 
 function handleError(error) {
