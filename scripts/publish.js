@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+// Script to publish CLI to NPM.
+
 const { npmPublish } = require("@jsdevtools/npm-publish");
 const { readFileSync, writeFileSync } = require("fs");
 
@@ -5,28 +8,35 @@ const token = process.argv[2];
 const manifestPath = "package.json";
 const preId = "canary";
 
-publishToNpm().then(console.log);
+publishToNpm().then(handleSuccess).catch(handleError);
 
 async function publishToNpm() {
-  try {
-    const result = await npmPublish({ token });
+  const result = await npmPublish({ token });
 
-    // If did not publish -> publish canary
-    if (result.type === "none") {
-      const manifestFile = readFileSync(manifestPath, "utf8");
-      const manifest = JSON.parse(manifestFile);
-      const canaryManifest = {
-        ...manifest,
-        version: `${manifest.version}-${preId}.${Date.now().valueOf()}`,
-      };
-      writeFileSync(manifestPath, JSON.stringify(canaryManifest, null, 2));
+  if (result.type === "none") return await publishCanaryToNpm();
 
-      return await npmPublish({ token, tag: preId });
-    }
+  return result;
+}
 
-    return result;
-  } catch (error) {
-    console.error(error);
-    process.exit(1);
-  }
+async function publishCanaryToNpm() {
+  const manifestFile = readFileSync(manifestPath, "utf8");
+  const manifest = JSON.parse(manifestFile);
+  const canaryManifest = {
+    ...manifest,
+    version: `${manifest.version}-${preId}.${Date.now().valueOf()}`,
+  };
+  writeFileSync(manifestPath, JSON.stringify(canaryManifest, null, 2));
+
+  return await npmPublish({ token, tag: preId });
+}
+
+/** @param {import("@jsdevtools/npm-publish").Results} results */
+function handleSuccess({ tag }) {
+  console.log("Link : https://www.npmjs.com/package/guptasiddhant");
+  console.log(`Usage: npx guptasiddhant@${tag}`);
+}
+
+function handleError(error) {
+  console.error(error);
+  process.exit(1);
 }
